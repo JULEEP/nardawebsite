@@ -17,14 +17,14 @@ const ContactUs = () => {
       icon: '📧',
       title: 'Email Us',
       description: 'Send us an email anytime and we\'ll respond within 24 hours',
-      details: 'contact@dharmadhwajam.com',
+      details: 'dharmadhwajam@gmail.com',
       gradient: 'from-cyan-300 to-blue-400'
     },
     {
       icon: '📞',
       title: 'Call Us',
       description: 'Speak directly with our support team during business hours',
-      details: '+1 (555) 123-NEWS',
+      details: '+91 63030 92897',
       gradient: 'from-purple-400 to-pink-500'
     },
     {
@@ -64,10 +64,10 @@ const ContactUs = () => {
 
   // Media emojis for floating animation
   const mediaEmojis = [
-    { icon: '📰', size: 'w-12 h-12', position: 'top-10 left-10', delay: 'delay-0' },
-    { icon: '📱', size: 'w-10 h-10', position: 'top-20 right-20', delay: 'delay-1000' },
-    { icon: '🎥', size: 'w-11 h-11', position: 'bottom-20 left-20', delay: 'delay-2000' },
-    { icon: '📡', size: 'w-9 h-9', position: 'bottom-10 right-10', delay: 'delay-1500' }
+    { icon: '📰', size: 'w-8 h-8 sm:w-12 sm:h-12', position: 'top-10 left-4 sm:left-10', delay: 'delay-0' },
+    { icon: '📱', size: 'w-7 h-7 sm:w-10 sm:h-10', position: 'top-20 right-6 sm:right-20', delay: 'delay-1000' },
+    { icon: '🎥', size: 'w-8 h-8 sm:w-11 sm:h-11', position: 'bottom-20 left-6 sm:left-20', delay: 'delay-2000' },
+    { icon: '📡', size: 'w-6 h-6 sm:w-9 sm:h-9', position: 'bottom-10 right-4 sm:right-10', delay: 'delay-1500' }
   ];
 
   useEffect(() => {
@@ -126,7 +126,7 @@ const ContactUs = () => {
       {mediaEmojis.map((emoji, index) => (
         <div
           key={index}
-          className={`absolute ${emoji.position} ${emoji.size} bg-white/20 backdrop-blur-lg rounded-2xl border border-white/30 flex items-center justify-center text-xl animate-float-slow ${emoji.delay} z-20 shadow-lg`}
+          className={`absolute ${emoji.position} ${emoji.size} bg-white/20 backdrop-blur-lg rounded-2xl border border-white/30 flex items-center justify-center text-lg sm:text-xl animate-float-slow ${emoji.delay} z-20 shadow-lg hidden sm:flex`}
         >
           {emoji.icon}
         </div>
@@ -134,53 +134,55 @@ const ContactUs = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Animated Header */}
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center space-x-2 bg-white/20 backdrop-blur-md rounded-full px-6 py-3 border border-white/30 mb-8">
-            <span className="w-3 h-3 bg-green-400 rounded-full animate-ping"></span>
-            <span className="text-white/90 font-medium">We're Here to Keep You Informed</span>
+        <div className="text-center mb-12 sm:mb-16">
+          <div className="inline-flex items-center space-x-2 bg-white/20 backdrop-blur-md rounded-full px-4 py-2 sm:px-6 sm:py-3 border border-white/30 mb-6 sm:mb-8">
+            <span className="w-2 h-2 sm:w-3 sm:h-3 bg-green-400 rounded-full animate-ping"></span>
+            <span className="text-white/90 font-medium text-sm sm:text-base">We're Here to Keep You Informed</span>
           </div>
 
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6 px-4">
             <span className="bg-gradient-to-r from-cyan-300 to-blue-300 bg-clip-text text-transparent">
               {animatedTitle}
             </span>
             <span className="animate-pulse text-white">|</span>
           </h2>
           
-          <p className="text-xl text-gray-200 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg sm:text-xl text-gray-200 max-w-3xl mx-auto leading-relaxed px-4">
             Have questions about our news platform or need assistance? 
             Our team is ready to help you stay informed and connected.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12">
           {/* Left Side - Content */}
-          <div className="space-y-8">
+          <div className="space-y-6 sm:space-y-8">
             {/* Contact Methods */}
-            <div className="bg-white/15 backdrop-blur-2xl rounded-3xl p-8 border border-white/25 shadow-2xl">
-              <h3 className="text-2xl font-bold text-white mb-6">Contact Methods</h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="bg-white/15 backdrop-blur-2xl rounded-3xl p-6 sm:p-8 border border-white/25 shadow-2xl">
+              <h3 className="text-xl sm:text-2xl font-bold text-white mb-4 sm:mb-6">Contact Methods</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                 {contactMethods.map((method, index) => (
                   <div 
                     key={index}
-                    className={`p-6 rounded-2xl border border-white/20 transition-all duration-500 transform ${
+                    className={`p-4 sm:p-6 rounded-2xl border border-white/20 transition-all duration-500 transform ${
                       index === currentContact ? 'scale-105 bg-white/15' : 'bg-white/10'
-                    } hover:scale-105 hover:bg-white/15 group`}
+                    } hover:scale-105 hover:bg-white/15 group relative`}
                   >
-                    <div className="flex items-center space-x-4">
-                      <div className={`w-12 h-12 bg-gradient-to-r ${method.gradient} rounded-xl flex items-center justify-center text-xl text-white transform group-hover:scale-110 transition-transform duration-300 ${index === currentContact ? 'animate-pulse' : ''}`}>
+                    <div className="flex items-center space-x-3 sm:space-x-4">
+                      <div className={`w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r ${method.gradient} rounded-xl flex items-center justify-center text-lg sm:text-xl text-white transform group-hover:scale-110 transition-transform duration-300 ${index === currentContact ? 'animate-pulse' : ''}`}>
                         {method.icon}
                       </div>
-                      <div>
-                        <h4 className="text-white font-semibold text-lg">{method.title}</h4>
-                        <p className="text-cyan-300 font-medium">{method.details}</p>
+                      <div className="flex-1 min-w-0">
+                        <h4 className="text-white font-semibold text-base sm:text-lg truncate">{method.title}</h4>
+                        <p className="text-cyan-300 font-medium text-sm sm:text-base truncate">
+                          {method.details}
+                        </p>
                       </div>
                     </div>
-                    <p className="text-gray-200 text-sm mt-3">
+                    <p className="text-gray-200 text-xs sm:text-sm mt-2 sm:mt-3 line-clamp-2">
                       {method.description}
                     </p>
                     {index === currentContact && (
-                      <div className="absolute -top-1 -right-1 w-3 h-3 bg-green-400 rounded-full animate-ping"></div>
+                      <div className="absolute -top-1 -right-1 w-2 h-2 sm:w-3 sm:h-3 bg-green-400 rounded-full animate-ping"></div>
                     )}
                   </div>
                 ))}
@@ -188,23 +190,23 @@ const ContactUs = () => {
             </div>
 
             {/* FAQ Section */}
-            <div className="bg-white/15 backdrop-blur-2xl rounded-3xl p-8 border border-white/25 shadow-2xl">
-              <h3 className="text-2xl font-bold text-white mb-6">Frequently Asked Questions</h3>
-              <div className="space-y-4">
+            <div className="bg-white/15 backdrop-blur-2xl rounded-3xl p-6 sm:p-8 border border-white/25 shadow-2xl">
+              <h3 className="text-xl sm:text-2xl font-bold text-white mb-4 sm:mb-6">Frequently Asked Questions</h3>
+              <div className="space-y-3 sm:space-y-4">
                 {faqs.map((faq, index) => (
                   <div 
                     key={index}
-                    className="bg-white/10 rounded-xl p-4 border border-white/20 hover:bg-white/15 transition-all duration-300 group cursor-pointer"
+                    className="bg-white/10 rounded-xl p-3 sm:p-4 border border-white/20 hover:bg-white/15 transition-all duration-300 group cursor-pointer"
                   >
                     <div className="flex items-center justify-between">
-                      <h4 className="text-white font-semibold group-hover:text-cyan-300 transition-colors duration-300">
+                      <h4 className="text-white font-semibold text-sm sm:text-base group-hover:text-cyan-300 transition-colors duration-300 pr-2">
                         {faq.question}
                       </h4>
-                      <span className="text-cyan-300 transform group-hover:rotate-180 transition-transform duration-300">
+                      <span className="text-cyan-300 transform group-hover:rotate-180 transition-transform duration-300 flex-shrink-0 text-xs">
                         ▼
                       </span>
                     </div>
-                    <p className="text-gray-200 mt-2 text-sm">
+                    <p className="text-gray-200 mt-2 text-xs sm:text-sm">
                       {faq.answer}
                     </p>
                   </div>
@@ -213,7 +215,7 @@ const ContactUs = () => {
             </div>
 
             {/* Support Stats */}
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-2 gap-3 sm:gap-4">
               {[
                 { number: '24/7', label: 'News Updates', icon: '🕒' },
                 { number: '1M+', label: 'Daily Readers', icon: '👥' },
@@ -222,15 +224,15 @@ const ContactUs = () => {
               ].map((stat, index) => (
                 <div 
                   key={index}
-                  className="text-center p-4 bg-white/10 backdrop-blur-lg rounded-xl border border-white/20 hover:bg-white/15 transition-all duration-300 hover:scale-105 group"
+                  className="text-center p-3 sm:p-4 bg-white/10 backdrop-blur-lg rounded-xl border border-white/20 hover:bg-white/15 transition-all duration-300 hover:scale-105 group"
                 >
-                  <div className="text-2xl mb-2 transform group-hover:scale-110 transition-transform duration-300">
+                  <div className="text-xl sm:text-2xl mb-1 sm:mb-2 transform group-hover:scale-110 transition-transform duration-300">
                     {stat.icon}
                   </div>
-                  <div className="text-xl font-bold bg-gradient-to-r from-cyan-300 to-blue-300 bg-clip-text text-transparent">
+                  <div className="text-lg sm:text-xl font-bold bg-gradient-to-r from-cyan-300 to-blue-300 bg-clip-text text-transparent">
                     {stat.number}
                   </div>
-                  <div className="text-gray-200 text-sm mt-1">
+                  <div className="text-gray-200 text-xs sm:text-sm mt-1">
                     {stat.label}
                   </div>
                 </div>
@@ -238,15 +240,15 @@ const ContactUs = () => {
             </div>
           </div>
 
-          {/* Right Side - Contact Form (Compact Height) */}
-          <div className="bg-white/15 backdrop-blur-2xl rounded-3xl p-6 border border-white/25 shadow-2xl transform hover:scale-105 transition-all duration-500 h-fit">
-            <h3 className="text-2xl font-bold text-white mb-2">Send us a Message</h3>
-            <p className="text-gray-200 mb-6">We'll get back to you as soon as possible</p>
+          {/* Right Side - Contact Form */}
+          <div className="bg-white/15 backdrop-blur-2xl rounded-3xl p-4 sm:p-6 border border-white/25 shadow-2xl transform hover:scale-105 transition-all duration-500 h-fit">
+            <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">Send us a Message</h3>
+            <p className="text-gray-200 text-sm sm:text-base mb-4 sm:mb-6">We'll get back to you as soon as possible</p>
 
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
                 <div className="group">
-                  <label className="block text-white font-medium mb-2 group-hover:text-cyan-300 transition-colors duration-300 text-sm">
+                  <label className="block text-white font-medium mb-1 sm:mb-2 group-hover:text-cyan-300 transition-colors duration-300 text-xs sm:text-sm">
                     Full Name *
                   </label>
                   <input
@@ -255,13 +257,13 @@ const ContactUs = () => {
                     value={formData.name}
                     onChange={handleInputChange}
                     required
-                    className="w-full bg-white/10 border border-white/25 rounded-xl px-4 py-2 text-white placeholder-gray-300 focus:outline-none focus:border-cyan-300 focus:bg-white/15 transition-all duration-300 backdrop-blur-sm text-sm"
+                    className="w-full bg-white/10 border border-white/25 rounded-xl px-3 sm:px-4 py-2 text-white placeholder-gray-300 focus:outline-none focus:border-cyan-300 focus:bg-white/15 transition-all duration-300 backdrop-blur-sm text-sm"
                     placeholder="Your full name"
                   />
                 </div>
 
                 <div className="group">
-                  <label className="block text-white font-medium mb-2 group-hover:text-cyan-300 transition-colors duration-300 text-sm">
+                  <label className="block text-white font-medium mb-1 sm:mb-2 group-hover:text-cyan-300 transition-colors duration-300 text-xs sm:text-sm">
                     Email Address *
                   </label>
                   <input
@@ -270,14 +272,14 @@ const ContactUs = () => {
                     value={formData.email}
                     onChange={handleInputChange}
                     required
-                    className="w-full bg-white/10 border border-white/25 rounded-xl px-4 py-2 text-white placeholder-gray-300 focus:outline-none focus:border-cyan-300 focus:bg-white/15 transition-all duration-300 backdrop-blur-sm text-sm"
+                    className="w-full bg-white/10 border border-white/25 rounded-xl px-3 sm:px-4 py-2 text-white placeholder-gray-300 focus:outline-none focus:border-cyan-300 focus:bg-white/15 transition-all duration-300 backdrop-blur-sm text-sm"
                     placeholder="your.email@example.com"
                   />
                 </div>
               </div>
 
               <div className="group">
-                <label className="block text-white font-medium mb-2 group-hover:text-cyan-300 transition-colors duration-300 text-sm">
+                <label className="block text-white font-medium mb-1 sm:mb-2 group-hover:text-cyan-300 transition-colors duration-300 text-xs sm:text-sm">
                   Subject *
                 </label>
                 <select
@@ -285,7 +287,7 @@ const ContactUs = () => {
                   value={formData.subject}
                   onChange={handleInputChange}
                   required
-                  className="w-full bg-white/10 border border-white/25 rounded-xl px-4 py-2 text-white focus:outline-none focus:border-cyan-300 focus:bg-white/15 transition-all duration-300 backdrop-blur-sm text-sm"
+                  className="w-full bg-white/10 border border-white/25 rounded-xl px-3 sm:px-4 py-2 text-white focus:outline-none focus:border-cyan-300 focus:bg-white/15 transition-all duration-300 backdrop-blur-sm text-sm"
                 >
                   <option value="">Select a topic</option>
                   <option value="support">Technical Support</option>
@@ -297,7 +299,7 @@ const ContactUs = () => {
               </div>
 
               <div className="group">
-                <label className="block text-white font-medium mb-2 group-hover:text-cyan-300 transition-colors duration-300 text-sm">
+                <label className="block text-white font-medium mb-1 sm:mb-2 group-hover:text-cyan-300 transition-colors duration-300 text-xs sm:text-sm">
                   Message *
                 </label>
                 <textarea
@@ -306,7 +308,7 @@ const ContactUs = () => {
                   onChange={handleInputChange}
                   required
                   rows="3"
-                  className="w-full bg-white/10 border border-white/25 rounded-xl px-4 py-2 text-white placeholder-gray-300 focus:outline-none focus:border-cyan-300 focus:bg-white/15 transition-all duration-300 backdrop-blur-sm resize-none text-sm"
+                  className="w-full bg-white/10 border border-white/25 rounded-xl px-3 sm:px-4 py-2 text-white placeholder-gray-300 focus:outline-none focus:border-cyan-300 focus:bg-white/15 transition-all duration-300 backdrop-blur-sm resize-none text-sm"
                   placeholder="Tell us how we can help you stay informed..."
                 ></textarea>
               </div>
@@ -315,7 +317,7 @@ const ContactUs = () => {
                 type="submit"
                 className="w-full bg-gradient-to-r from-cyan-400 to-blue-500 hover:from-cyan-500 hover:to-blue-600 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 shadow-2xl hover:shadow-cyan-500/25 hover:scale-105 transform hover:-translate-y-1 flex items-center justify-center group text-sm"
               >
-                <i className="fas fa-paper-plane mr-2 transform group-hover:translate-x-1 transition-transform"></i>
+                <span className="mr-2 transform group-hover:translate-x-1 transition-transform">📨</span>
                 Send Message
               </button>
 
@@ -327,21 +329,21 @@ const ContactUs = () => {
         </div>
 
         {/* Breaking News Support Banner */}
-        <div className="mt-16 bg-gradient-to-r from-cyan-400/20 to-blue-400/20 backdrop-blur-lg rounded-3xl p-6 border border-cyan-300/30 text-center">
-          <div className="flex items-center justify-center space-x-3 mb-3">
-            <div className="w-4 h-4 bg-red-400 rounded-full animate-pulse"></div>
-            <h3 className="text-xl font-bold text-white">Breaking News Support</h3>
-            <div className="w-4 h-4 bg-red-400 rounded-full animate-pulse"></div>
+        <div className="mt-12 sm:mt-16 bg-gradient-to-r from-cyan-400/20 to-blue-400/20 backdrop-blur-lg rounded-3xl p-4 sm:p-6 border border-cyan-300/30 text-center">
+          <div className="flex items-center justify-center space-x-2 sm:space-x-3 mb-2 sm:mb-3">
+            <div className="w-2 h-2 sm:w-3 sm:h-3 bg-red-400 rounded-full animate-pulse"></div>
+            <h3 className="text-lg sm:text-xl font-bold text-white">Breaking News Support</h3>
+            <div className="w-2 h-2 sm:w-3 sm:h-3 bg-red-400 rounded-full animate-pulse"></div>
           </div>
-          <p className="text-gray-200 text-sm mb-3">
+          <p className="text-gray-200 text-xs sm:text-sm mb-2 sm:mb-3">
             For urgent breaking news submissions or media partnerships
           </p>
-          <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
-            <div className="text-white font-bold text-lg bg-red-500/20 px-4 py-2 rounded-xl border border-red-400/50">
+          <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 justify-center items-center">
+            <div className="text-white font-bold text-sm sm:text-lg bg-red-500/20 px-3 sm:px-4 py-1 sm:py-2 rounded-xl border border-red-400/50 text-center">
               📰 Breaking News: +1 (555) 911-NEWS
             </div>
-            <button className="border border-red-400/50 text-red-400 hover:bg-red-400/10 font-semibold py-2 px-4 rounded-xl transition-all duration-300 hover:scale-105 flex items-center backdrop-blur-sm text-sm">
-              <i className="fas fa-bullhorn mr-2"></i>
+            <button className="border border-red-400/50 text-red-400 hover:bg-red-400/10 font-semibold py-1 sm:py-2 px-3 sm:px-4 rounded-xl transition-all duration-300 hover:scale-105 flex items-center backdrop-blur-sm text-xs sm:text-sm">
+              <span className="mr-1 sm:mr-2">📢</span>
               Submit News
             </button>
           </div>
@@ -364,6 +366,14 @@ const ContactUs = () => {
         
         .animate-float-slow {
           animation: float-slow 6s ease-in-out infinite;
+        }
+
+        /* Line clamp utility for text truncation */
+        .line-clamp-2 {
+          display: -webkit-box;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
         }
       `}</style>
     </div>
